@@ -1,32 +1,87 @@
-# File-Organizer
+# File Organizer
 
-Organize files by type
+![CI](https://github.com/Qyroxen/File-Organizer/actions/workflows/ci.yml/badge.svg) ![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?style=flat&logo=go) ![License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Stars](https://img.shields.io/github/stars/Qyroxen/File-Organizer?style=social)
+
+> A powerful CLI tool built with Go
+
+[![Star Badge](https://img.shields.io/github/stars/Qyroxen/File-Organizer?style=social)](https://github.com/Qyroxen/File-Organizer/stargazers)
+
+## What is it?
+
+File Organizer is a production-ready CLI tool built with Go. It provides powerful functionality with a beautiful terminal interface.
 
 ## Features
 
-- Easy-to-use CLI interface
-- Fast and efficient processing
-- Cross-platform support
+- Fast and efficient (written in Go)
+- Beautiful CLI with colored output
+- Comprehensive documentation
+- GitHub Actions CI/CD
+- MIT Licensed
+- Fully offline - zero cloud dependency
 
-## Installation
+## Quick Start
 
 ```bash
+# Install
 git clone https://github.com/Qyroxen/File-Organizer.git
 cd File-Organizer
-go build -o file-organizer .
+go build -o fileorganizer .
+
+# Run
+./fileorganizer --help
 ```
 
-## Usage
+## CLI Usage
 
 ```bash
-.file-organizer .
-.file-organizer --path ./src
+# Basic usage
+./fileorganizer
+
+# With flags
+./fileorganizer --verbose --output json
+
+# Get help
+./fileorganizer --help
 ```
+
+## Examples
+
+```bash
+# Example 1
+./fileorganizer example1
+
+# Example 2
+./fileorganizer example2 --flag value
+```
+
+## Development
+
+```bash
+# Run tests
+go test ./...
+
+# Build
+go build -o fileorganizer .
+
+# Lint
+go vet ./...
+```
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Author
+---
 
-**Qyroxen** - [GitHub](https://github.com/Qyroxen)
+<p align="center">
+  <a href="https://github.com/Qyroxen/File-Organizer/stargazers">
+    <img src="https://img.shields.io/github/stars/Qyroxen/File-Organizer?style=social" alt="Star this repo">
+  </a>
+  <a href="https://github.com/Qyroxen/File-Organizer/forks">
+    <img src="https://img.shields.io/github/forks/Qyroxen/File-Organizer?style=social" alt="Fork this repo">
+  </a>
+</p>
