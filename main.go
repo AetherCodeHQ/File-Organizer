@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -13,7 +12,7 @@ func main() {
 	if len(os.Args) > 1 {
 		dir = os.Args[1]
 	}
-	var n int
+	byExt := map[string][]string{}
 	filepath.Walk(dir, func(p string, info os.FileInfo, err error) error {
 		if err != nil || info.IsDir() {
 			return nil
@@ -21,9 +20,19 @@ func main() {
 		if strings.HasPrefix(info.Name(), ".") {
 			return nil
 		}
-		n++
-		fmt.Println(p)
+		ext := strings.ToLower(filepath.Ext(p))
+		if ext == "" {
+			ext = "(no extension)"
+		}
+		byExt[ext] = append(byExt[ext], p)
 		return nil
 	})
-	fmt.Printf("%d file(s)\n", n)
+	fmt.Println("Suggested organization:")
+	for ext, files := range byExt {
+		folder := strings.TrimPrefix(ext, ".")
+		fmt.Printf("\n%s/ (%d files)\n", folder, len(files))
+		for _, f := range files {
+			fmt.Printf("  -> %s/%s\n", folder, filepath.Base(f))
+		}
+	}
 }
